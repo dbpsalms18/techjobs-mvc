@@ -33,13 +33,13 @@ public class SearchController {
 
             model.addAttribute("title", searchTerm + " from all columns");
             model.addAttribute("listItems", jobsToPrint);
-            model.addAttribute("column", columnChoices);
+            model.addAttribute("columns", columnChoices);
         }
         else {
             jobsToPrint = JobData.findByColumnAndValue(searchType, searchTerm);
             model.addAttribute("title", searchTerm + " from "+ searchType+" columns");
             model.addAttribute("listItems", jobsToPrint);
-            model.addAttribute("column", columnChoices);
+            model.addAttribute("columns", columnChoices);
         }
         return "search";
     }

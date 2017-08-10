@@ -38,28 +38,24 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-    <div class="container body-content">
-
-        <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <!--<div class="container body-content">-->
 
         <div th:if="${listItems} and ${listItems.size()}">
 
             <table th:each="items : ${listItems}" class="job-listing">
                 <tr th:each="item, idx : ${items}" th:class="${idx.odd} ? 'odd'">
                     <td th:text="${item.key}"></td>
-                    <td><a th:href="@{/list/jobs(column=${column},value=${item})}" th:text="${item.value}"></a></td>
+                    <td th:text="${item.value}"></td>
                 </tr>
             <tr class="blank_row"> </tr>
             </table>
 
-        </div>
+        <!--</div>-->
         <!--
         <div th:if="not ${listItems.size()}">
             <p th:text="No positions fit this search.">Hi, User</p>
         </div>-->
-
-
-    </div>
+        </div>
 
 </div>
 
